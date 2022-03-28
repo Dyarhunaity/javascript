@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input name="password" type="password" placeholder="password" id="pass1" onkeyup="setStyle(this,document.getElementById('pass2'));" />
+    <input name="repeatpassword" type="password" placeholder="confirm password" id="pass2" onkeyup="setStyle(this,document.getElementById('pass1'));" />
+    <div id="error-nwl"></div>
+
+
+    <script>
+      function isValidLength(element) {
+          return (element.value.length > 5);
+      }
+
+      function isEqual(element1, element2) {
+          if (element1.value.length > 0 && element2.value.length > 0)
+              return (element1.value == element2.value);
+          return true;
+      }
+
+      function setStyle(element, element2) {
+          var message = document.getElementById('error-nwl');
+          var goodColor = "#66cc66";
+          var badColor = "#ff6666";
+          var isValidPWD = isValidLength(element) && isEqual(element, element2);
+
+          if (isValidPWD) {
+              if (isValidLength(element)) {
+                  element.style.backgroundColor = goodColor;
+                  message.style.color = goodColor;
+                  message.innerHTML = "character number ok!"
+              }
+              if (isEqual(element, element2)) {
+                  element.style.backgroundColor = goodColor;
+                  message.style.color = goodColor;
+                  message.innerHTML = "ok!"
+              }
+          } else {
+              if (!isValidLength(element)) {
+                  element.style.backgroundColor = badColor;
+                  message.style.color = badColor;
+                  message.innerHTML = " you have to enter at least 6 digit!"
+              }
+
+              if (!isEqual(element, element2)) {
+                  element.style.backgroundColor = badColor;
+                  message.style.color = badColor;
+                  message.innerHTML = " These passwords don't match"
+              }
+          }
+      }
+      
+  </script>
+
+
+</body>
+<input type="submit" value="Submit">
+</html>

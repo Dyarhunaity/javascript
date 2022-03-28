@@ -3,8 +3,8 @@ let first_num_string= prompt(`please enter the first number`);
 let second_num_string= prompt(`please enter the first number`);
 
 
-let first_num_number= number(first_num_string);
-let second_num_number= number(first_num_string);
+let first_num_number= Number(first_num_string);
+let second_num_number= Number(first_num_string);
 
 switch (opreation) {
     case "+":{
