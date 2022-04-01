@@ -1,5 +1,5 @@
 
-function person(fname, lname, age, dateofbirth, favioratefood, favioratemovie){
+function Person(fname, lname, age, dateofbirth, favioratefood, favioratemovie){
     this.firstname = fname;
     this.lastname = lname;
     this.age = age;
@@ -9,5 +9,5 @@ function person(fname, lname, age, dateofbirth, favioratefood, favioratemovie){
 
 }
 
-myName = new person("dyar", "hunaity", 18, "2003", "mansef", "the dark knight rises");
+myName = new Person("dyar", "hunaity", 18, "2003", "mansef", "the dark knight rises");
 document.write(myName.firstname + " is " + myName.age + " born in " + myName.dateofbirth + " his faviorate food is " + myName.favioratefood + " his faviorate movie is " + myName.favioratemovie)
